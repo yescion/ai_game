@@ -7,6 +7,7 @@ cd /d "%~dp0"
 echo ================================================
 echo Plains Simulation - Portable Edition
 echo ================================================
+echo WX: DreamingKingdom
 echo.
 echo [INFO] Using built-in runtime, no installation needed
 echo.

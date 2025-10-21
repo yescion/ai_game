@@ -309,7 +309,7 @@ export function HelpModal({ onClose }: HelpModalProps) {
         </div>
 
         <div className="help-modal-footer">
-          <p>🎮 享受你的模拟人生之旅！</p>
+          <p>🎮 享受你的模拟人生之旅！作者微信：DreamingKingdom</p>
           <button onClick={onClose} className="help-ok-btn">我知道了</button>
         </div>
       </div>
