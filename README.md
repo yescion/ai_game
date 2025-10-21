@@ -23,8 +23,8 @@
 【一键启动包已内置python和nodejs环境，无需额外配置】  
 
 ## 文件目录结构：
-runtime 放置python环境，也可以直接执行python脚本
-node 放置nodejs的独立运行包，可在官网下载
+runtime 放置python环境，也可以直接执行python脚本  
+node 放置nodejs的独立运行包，可在官网下载  
 ![image](屏幕截图 2025-10-21 204047.png)
 ### ✨ 核心特点
 
