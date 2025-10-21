@@ -25,7 +25,11 @@
 ## 文件目录结构：
 runtime 放置python环境，也可以直接执行python脚本  
 node 放置nodejs的独立运行包，可在官网下载  
-[![image](https://github.com/yescion/ai_game/blob/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-21%20204047.png)]
+[![image](https://github.com/yescion/ai_game/blob/main/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-10-21%20204047.png)]  
+
+## 演示视频  
+[![url](https://www.bilibili.com/video/BV1LDWdzFEaK/)]  
+
 ### ✨ 核心特点
 
 - 🤖 **AI驱动决策**：每个NPC使用大语言模型进行独立思考和决策
