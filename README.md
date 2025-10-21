@@ -29,6 +29,7 @@ node 放置nodejs的独立运行包，可在官网下载
 
 ## 演示视频  
 [![url](https://www.bilibili.com/video/BV1LDWdzFEaK/)]  
+[![text](BILIBILI)](https://www.bilibili.com/video/BV1LDWdzFEaK))
 
 ### ✨ 核心特点
 
