@@ -189,7 +189,7 @@ chmod +x start_game.sh
 
 #### 1. 配置环境变量
 
-在项目根目录或 `backend/` 目录创建 `.env` 文件：
+在 `backend/` 目录创建 `.env` 文件：
 
 ```bash
 DEEPSEEK_API_KEY=your_api_key_here
