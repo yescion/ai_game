@@ -1,0 +1,10 @@
+deepseek为例：
+注册账号或登录deepseek开放平台：https://platform.deepseek.com/
+
+创建API-KEY：
+https://platform.deepseek.com/api_keys
+获取的API输入到backend目录下.env文件中，该文件可以使用记事本等编辑工具打开。
+内容为：
+DEEPSEEK_API_KEY=sk-XXXXX
+DEEPSEEK_BASE_URL=https://api.deepseek.com
+其他接口如果格式跟deepseek的接口规范不同的，请编辑\backend\app\services\ai_service.py文件。

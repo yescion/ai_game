@@ -1,0 +1,497 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: gradientShift 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.loading-content {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  padding: 40px;
+  max-width: 800px;  /* 增加最大宽度从600px到800px */
+  width: 95%;  /* 增加宽度从90%到95% */
+  max-height: 90vh;  /* 限制最大高度 */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  animation: fadeInScale 0.5s ease;
+  overflow-y: auto;  /* 添加垂直滚动 */
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loading-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.loading-header h1 {
+  font-size: 48px;
+  margin: 0 0 10px 0;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.loading-body {
+  min-height: 200px;  /* 减少最小高度 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Checking状态 */
+.checking-animation {
+  text-align: center;
+  width: 100%;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 30px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-text {
+  font-size: 20px;
+  color: white;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+.loading-steps {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.step-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+/* Success状态 */
+.success-animation {
+  text-align: center;
+}
+
+.success-icon {
+  font-size: 80px;
+  animation: successPulse 0.5s ease;
+}
+
+@keyframes successPulse {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.status-text.success {
+  color: #81c784;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sub-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Error状态 */
+.error-animation {
+  text-align: center;
+  width: 100%;
+}
+
+.error-icon {
+  font-size: 80px;
+  animation: errorShake 0.5s ease;
+}
+
+@keyframes errorShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.status-text.error {
+  color: #ff6b6b;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.error-details {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 50vh;  /* 限制错误详情的最大高度 */
+  overflow-y: auto;  /* 添加滚动 */
+  padding-right: 10px;  /* 为滚动条留出空间 */
+}
+
+.error-box, .check-results, .solution-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+
+.error-box h3, .check-results h3, .solution-box h3 {
+  margin: 0 0 15px 0;
+  color: white;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #ffcccb;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  word-break: break-word;
+}
+
+.check-results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.result-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.result-value {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.result-value.success {
+  color: #81c784;
+}
+
+.result-value.error {
+  color: #ff6b6b;
+}
+
+.solution-box ul {
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+}
+
+.solution-box li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.solution-box code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #ffd89b;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.solution-steps {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.solution-steps p {
+  margin: 15px 0 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.solution-steps ol {
+  margin: 10px 0;
+  padding-left: 25px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.solution-steps li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.solution-steps pre {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 6px;
+  color: #ffd89b;
+  font-family: 'Courier New', monospace;
+  font-size: 11px;  /* 稍微减小字体 */
+  overflow-x: auto;
+  margin: 8px 0;
+  border: 1px solid rgba(255, 216, 155, 0.3);
+  line-height: 1.4;
+  word-break: break-all;  /* 允许长单词换行 */
+  white-space: pre-wrap;  /* 允许换行 */
+}
+
+.tip-box {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(102, 126, 234, 0.2);
+  border-left: 3px solid #667eea;
+  border-radius: 6px;
+}
+
+.tip-box strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #b8c5ff;
+}
+
+.tip-box a {
+  color: #81c784;
+  text-decoration: none;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.tip-box a:hover {
+  text-decoration: underline;
+}
+
+.error-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.retry-btn, .exit-btn {
+  padding: 12px 32px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.retry-btn {
+  background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+  color: white;
+}
+
+.retry-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(129, 199, 132, 0.4);
+}
+
+.exit-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+}
+
+.exit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+.retry-btn:active, .exit-btn:active {
+  transform: translateY(0);
+}
+
+/* Footer */
+.loading-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.loading-footer p {
+  margin: 5px 0;
+}
+
+.version {
+  font-weight: bold;
+}
+
+/* 滚动条样式 */
+.loading-content::-webkit-scrollbar,
+.error-details::-webkit-scrollbar {
+  width: 8px;
+}
+
+.loading-content::-webkit-scrollbar-track,
+.error-details::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.loading-content::-webkit-scrollbar-thumb,
+.error-details::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.loading-content::-webkit-scrollbar-thumb:hover,
+.error-details::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .loading-content {
+    max-width: 700px;
+    padding: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loading-content {
+    max-width: 95%;
+    padding: 25px 20px;
+    max-height: 95vh;
+  }
+
+  .loading-header h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .status-text {
+    font-size: 18px;
+  }
+
+  .step {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .retry-btn, .exit-btn {
+    width: 100%;
+  }
+
+  .solution-steps pre {
+    font-size: 10px;
+    padding: 8px;
+  }
+
+  .solution-steps ol {
+    padding-left: 20px;
+  }
+
+  .solution-steps li {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-content {
+    padding: 20px 15px;
+  }
+
+  .loading-header h1 {
+    font-size: 28px;
+  }
+
+  .error-box, .check-results, .solution-box {
+    padding: 15px;
+  }
+}
+

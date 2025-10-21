@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #1a1a1a;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  height: calc(100vh - 56px);
+  overflow: hidden;
+  gap: 0;
+}
+
+.game-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.error-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.error-message {
+  padding: 24px 32px;
+  background: #FF4444;
+  color: white;
+  border-radius: 8px;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(255, 68, 68, 0.5);
+}
+
+/* 右下角功能按钮组 */
+.floating-buttons {
+  position: fixed;
+  bottom: 90px;  /* 在上帝指令按钮上方 */
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 9999;
+}
+
+/* ❓ 帮助按钮 */
+.help-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(255, 216, 155, 0.4);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-btn:hover {
+  transform: scale(1.1) rotate(-10deg);
+  box-shadow: 0 6px 30px rgba(255, 216, 155, 0.6);
+}
+
+.help-btn:active {
+  transform: scale(0.95);
+}
+
+/* 📊 管理面板按钮 */
+.admin-dashboard-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(240, 147, 251, 0.4);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-dashboard-btn:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 30px rgba(240, 147, 251, 0.6);
+}
+
+.admin-dashboard-btn:active {
+  transform: scale(0.95);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
